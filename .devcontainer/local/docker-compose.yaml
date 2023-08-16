@@ -1,0 +1,12 @@
+version: "3"
+services:
+  app:
+    cpus: 4
+    mem_limit: 15g
+    build:
+      context: ../..
+      dockerfile: ./.devcontainer/Dockerfile
+    image: datajoint/neurophotonics_devcontainer:latest
+    volumes:
+      - ../..:/workspaces/neurophotonics:cached
+    command: bash -c "while sleep 1000; do :; done"
